@@ -19,11 +19,11 @@ public class TCs_Contact extends AbstractClass{
 	public ContactPage contactPage;
 	private ExcelUtils excel;
 	
-	private String expectedFullname = "Vui lòng cho biết họ tên.";
-	private String expectedEmail = "Địa chỉ mail hoặc định dạng không đúng.";
-	private String expectedPhone = "Vui lòng cho biết số điện thoại.";
+	private String expectedFullname = "Vui lÃ²ng cho biáº¿t há»� tÃªn.";
+	private String expectedEmail = "Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.";
+	private String expectedPhone = "Vui lÃ²ng cho biáº¿t sá»‘ Ä‘iá»‡n thoáº¡i.";
 	private String expectedAddress = "Please fill out this field.";
-	private String expectedSuccessfully = "Thông tin của bạn đã được gửi tới chúng tôi.\nChúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.";
+	private String expectedSuccessfully = "ThÃ´ng tin cá»§a báº¡n Ä‘Ã£ Ä‘Æ°á»£c gá»­i tá»›i chÃºng tÃ´i.\nChÃºng tÃ´i sáº½ liÃªn láº¡c vá»›i báº¡n trong thá»�i gian sá»›m nháº¥t.";
 	
 	@BeforeMethod
 	public void setUp() {
@@ -63,10 +63,12 @@ public class TCs_Contact extends AbstractClass{
 			&& expectedAddress.equals(actualAddress)
 			) {
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(1, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(1, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -96,10 +98,12 @@ public class TCs_Contact extends AbstractClass{
 			&& expectedAddress.equals(actualAddress)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(2, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(2, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -129,10 +133,12 @@ public class TCs_Contact extends AbstractClass{
 			&& expectedAddress.equals(actualAddress)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(3, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(3, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -160,10 +166,12 @@ public class TCs_Contact extends AbstractClass{
 		if (expectedAddress.equals(actualAddress)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(4, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(4, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -191,10 +199,12 @@ public class TCs_Contact extends AbstractClass{
 		if (expectedPhone.equals(actualPhone)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(5, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(5, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -222,10 +232,12 @@ public class TCs_Contact extends AbstractClass{
 		if (expectedEmail.equals(actualEmail)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(6, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(6, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");
@@ -253,10 +265,12 @@ public class TCs_Contact extends AbstractClass{
 		if (expectedSuccessfully.equals(actualSuccessSM)
 			){
 	           System.out.print("passed! \r" );
+	           Assert.assertTrue(true);
 	           ExcelUtils.setCellData(7, 8, "Passed");
 			}
 			else {
 				System.out.print("failed! \r" );
+				Assert.assertTrue(false);
 				ExcelUtils.setCellData(7, 8, "Failed");
 			}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Contact.xlsx");

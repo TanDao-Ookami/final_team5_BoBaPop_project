@@ -1,6 +1,7 @@
 package test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -29,9 +30,9 @@ public class RegisterPageTest extends AbstractClass {
 		String text = registerPage.getErrorFullname();
 		String text1 = registerPage.getErrorEmail();
 		String text2 = registerPage.getErrorPassword();
-		String altertext = "Vui lòng cho biết họ tên.";
-		String altertext1 = "Địa chỉ mail hoặc định dạng không đúng.";
-		String altertext2 = "Mật khẩu không được để trống.";
+		String altertext = "Vui lÃ²ng cho biáº¿t há»� tÃªn.";
+		String altertext1 = "Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.";
+		String altertext2 = "Máº­t kháº©u khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.";
 //		if (altertext.equals(text) == true && altertext1.equals(text1) == true && altertext2.equals(text2) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -45,10 +46,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true && altertext1.equals(text1) && altertext2.equals(text2)) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(1, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(1, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");
@@ -62,8 +65,8 @@ public class RegisterPageTest extends AbstractClass {
 		registerPage.Register(ExcelUtils.getCellData(2,2), ExcelUtils.getCellData(2,3),  ExcelUtils.getCellData(2,4));
 		String text = registerPage.getErrorEmail();
 		String text1 = registerPage.getErrorPassword();
-		String altertext = "Địa chỉ mail hoặc định dạng không đúng.";
-		String altertext1 = "Mật khẩu không được để trống.";
+		String altertext = "Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.";
+		String altertext1 = "Máº­t kháº©u khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.";
 //		if (altertext.equals(text) == true && altertext1.equals(text1) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -77,10 +80,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true && altertext1.equals(text1)) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(2, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(2, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");	
@@ -93,7 +98,7 @@ public class RegisterPageTest extends AbstractClass {
 		registerPage = new RegisterPage(driver);
 		registerPage.Register(ExcelUtils.getCellData(3,2), ExcelUtils.getCellData(3,3),  ExcelUtils.getCellData(3,4));
 		String text = registerPage.getErrorPassword();
-		String altertext = "Mật khẩu không được để trống.";
+		String altertext = "Máº­t kháº©u khÃ´ng Ä‘Æ°á»£c Ä‘á»ƒ trá»‘ng.";
 //		if ( altertext.equals(text) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -107,10 +112,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(3, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(3, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");	
@@ -125,7 +132,7 @@ public class RegisterPageTest extends AbstractClass {
 		Thread.sleep(2000);
 		String text = registerPage.getSuccessMessage();
 		
-		String altertext = "Địa chỉ mail hoặc định dạng không đúng.";
+		String altertext = "Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.";
 //		if (altertext.equals(text) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -139,10 +146,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(4, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(4, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");	
@@ -156,7 +165,7 @@ public class RegisterPageTest extends AbstractClass {
 		registerPage.Register(ExcelUtils.getCellData(5,2), ExcelUtils.getCellData(5,3),  ExcelUtils.getCellData(5,4));
 		Thread.sleep(2000);
 		String text = registerPage.getErrorMessage();
-		String altertext = "Địa chỉ mail này đã được sử dụng, xin vui lòng đăng ký địa chỉ mail khác !";
+		String altertext = "Ä�á»‹a chá»‰ mail nÃ y Ä‘Ã£ Ä‘Æ°á»£c sá»­ dá»¥ng, xin vui lÃ²ng Ä‘Äƒng kÃ½ Ä‘á»‹a chá»‰ mail khÃ¡c !";
 //		if (altertext.equals(text) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -170,10 +179,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(5, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(5, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");	
@@ -187,7 +198,7 @@ public class RegisterPageTest extends AbstractClass {
 		registerPage.Register(ExcelUtils.getCellData(6,2), ExcelUtils.getCellData(6,3),  ExcelUtils.getCellData(6,4));
 		Thread.sleep(2000);
 		String text = registerPage.getSuccessMessage();
-		String altertext = "Đăng ký thành công, chào mừng bạn đến với hệ thống Bobapop.";
+		String altertext = "Ä�Äƒng kÃ½ thÃ nh cÃ´ng, chÃ o má»«ng báº¡n Ä‘áº¿n vá»›i há»‡ thá»‘ng Bobapop.";
 //		if (altertext.equals(text) == true) {
 //			this.checkTestCase = true;
 //			if (checkTestCase) {
@@ -201,10 +212,12 @@ public class RegisterPageTest extends AbstractClass {
 //		}
 		if(altertext.equals(text) == true) {
 			System.out.println("passed! \r");
+			Assert.assertTrue(true);
 			ExcelUtils.setCellData(6, 6, "Passed");
 		}
 		else {
 			System.out.print("failed! \r" );
+			Assert.assertTrue(false);
 			ExcelUtils.setCellData(6, 6, "Failed");
 		}
 		ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Register.xlsx");

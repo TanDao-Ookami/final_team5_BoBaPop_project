@@ -21,12 +21,12 @@ public class LoginPageTest extends AbstractClass{
 	public LoginPage loginPage;
 	private ExcelUtils excel;
 	
-	public String alertMessage= "Sai password hoặc tài khoản !\nNếu bạn chưa có tài khoản, hãy đăng ký.";
-	public String passMessage = "Chào mừng bạn đã đăng nhập thành công.";
-	public String alterwarning = "Địa chỉ mail hoặc định dạng không đúng.";
+	public String alertMessage= "Sai password hoáº·c tÃ i khoáº£n !\nNáº¿u báº¡n chÆ°a cÃ³ tÃ i khoáº£n, hÃ£y Ä‘Äƒng kÃ½.";
+	public String passMessage = "ChÃ o má»«ng báº¡n Ä‘Ã£ Ä‘Äƒng nháº­p thÃ nh cÃ´ng.";
+	public String alterwarning = "Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.";
   
 //	WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
-////	  String expNoti = "Sai password hoáº·c tÃ i khoáº£n !";
+////	  String expNoti = "Sai password hoÃ¡ÂºÂ·c tÃƒÂ i khoÃ¡ÂºÂ£n !";
 //	  String accNoti = noti.getText();
 //	  System.out.println(noti.getText());
 //	  if (noti.getText().equals(alertMessage)==true
@@ -59,16 +59,18 @@ public class LoginPageTest extends AbstractClass{
 		loginPage = new LoginPage(driver);
 		loginPage.Login(ExcelUtils.getCellData(1,2), ExcelUtils.getCellData(1,3));
 		WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
-//		  String expNoti = "Sai password hoáº·c tÃ i khoáº£n !";
+//		  String expNoti = "Sai password hoÃ¡ÂºÂ·c tÃƒÂ i khoÃ¡ÂºÂ£n !";
 		  //String accNoti = noti.getText();
 		  //System.out.println(noti.getText());
 		  if (noti.getText().equals(alertMessage)==true
 				  || noti.getText().contains(alertMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(1, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(1, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -81,16 +83,18 @@ public class LoginPageTest extends AbstractClass{
 
 			loginPage = new LoginPage(driver);
 			loginPage.Login(ExcelUtils.getCellData(2,2), ExcelUtils.getCellData(2,3));
-			WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Địa chỉ mail hoặc định dạng không đúng.')]"));
+			WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.')]"));
 //			  WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
 //			  String accNoti = noti.getText();
 			  
 			  if ( warning.getText().contains(alterwarning)==true) {
 					           System.out.print("passed! \r" );
+					           Assert.assertTrue(true);
 					           ExcelUtils.setCellData(2, 5, "Passed");
 					  }
 					  else {
 						  System.out.print("failed! \r");
+						  Assert.assertTrue(false);
 						  ExcelUtils.setCellData(2, 5, "Failed");
 					  }
 //			driver.navigate().refresh();
@@ -102,17 +106,19 @@ public class LoginPageTest extends AbstractClass{
 
 		loginPage = new LoginPage(driver);
 		loginPage.Login(ExcelUtils.getCellData(3,2), ExcelUtils.getCellData(3,3));
-		WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Địa chỉ mail hoặc định dạng không đúng.')]"));
+		WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.')]"));
 //		  WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
 //		  String accNoti = noti.getText();
 		  
 		  
 		  if ( warning.getText().contains(alterwarning)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(3, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(3, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -132,10 +138,12 @@ public class LoginPageTest extends AbstractClass{
 		  if (noti.getText().equals(alertMessage)==true
 				  || noti.getText().contains(alertMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(4, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(4, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -149,16 +157,18 @@ public class LoginPageTest extends AbstractClass{
 		loginPage = new LoginPage(driver);
 		loginPage.Login(ExcelUtils.getCellData(5,2), ExcelUtils.getCellData(5,3));
 		WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
-//		  String expNoti = "Sai password hoáº·c tÃ i khoáº£n !";
+//		  String expNoti = "Sai password hoÃ¡ÂºÂ·c tÃƒÂ i khoÃ¡ÂºÂ£n !";
 		  String accNoti = noti.getText();
 		  //System.out.println(noti.getText());
 		  if (noti.getText().equals(alertMessage)==true
 				  || noti.getText().contains(alertMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(5, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(5, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -172,16 +182,18 @@ public class LoginPageTest extends AbstractClass{
 		loginPage = new LoginPage(driver);
 		loginPage.Login(ExcelUtils.getCellData(6,2), ExcelUtils.getCellData(6,3));
 		WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
-//		  String expNoti = "Sai password hoáº·c tÃ i khoáº£n !";
+//		  String expNoti = "Sai password hoÃ¡ÂºÂ·c tÃƒÂ i khoÃ¡ÂºÂ£n !";
 		  String accNoti = noti.getText();
 		  
 		  if (noti.getText().equals(alertMessage)==true
 				  && noti.getText().contains(alertMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(6, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(6, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -195,15 +207,17 @@ public class LoginPageTest extends AbstractClass{
 		loginPage = new LoginPage(driver);
 		loginPage.Login(ExcelUtils.getCellData(7,2), ExcelUtils.getCellData(7,3));
 		
-		WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Địa chỉ mail hoặc định dạng không đúng.')]"));
+		WebElement warning = driver.findElement(By.xpath("//li[contains(text(),'Ä�á»‹a chá»‰ mail hoáº·c Ä‘á»‹nh dáº¡ng khÃ´ng Ä‘Ãºng.')]"));
 		WebElement noti = driver.findElement(By.xpath("//div[@class=\"modal fade in\"]//div[@class=\"modal-content\"]//div[@class=\"modal-body\"]"));
 		  if ( warning.getText().equals(alterwarning)==true
 				  && noti.getText().contains(alertMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(7, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(7, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
@@ -219,10 +233,12 @@ public class LoginPageTest extends AbstractClass{
 		WebElement passlogin = driver.findElement(By.xpath(" //body/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]"));	 
 		  if ( passlogin.getText().contains(passMessage)==true) {
 				           System.out.print("passed! \r" );
+				           Assert.assertTrue(true);
 				           ExcelUtils.setCellData(8, 5, "Passed");
 				  }
 				  else {
 					  System.out.print("failed! \r");
+					  Assert.assertTrue(false);
 					  ExcelUtils.setCellData(8, 5, "Failed");
 				  }
 		  ExcelUtils.closeandsaveFile(".\\Data\\FunctionalTestCase-Login.xlsx");
